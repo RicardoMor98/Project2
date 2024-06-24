@@ -31,11 +31,16 @@ function playRound() {
 
 function determineWinner(player, computer) {
     if (player === computer) return 'draw';
-    if ((player === 'rock' && computer === 'scissors') || 
+    if ((player === 'rock' && computer === 'scissors') ||
         (player === 'paper' && computer === 'rock') || 
         (player === 'scissors' && computer === 'paper') || 
         (player === 'lizard' && computer === 'spock') || 
-        (player === 'spock' && computer === 'rock')) 
+        (player === 'spock' && computer === 'rock') ||
+        (player === 'rock' && computer === 'lizard') ||
+        (player === 'paper' && computer === 'spock') ||
+        (player === 'scissors' && computer === 'lizard') ||
+        (player === 'lizard' && computer === 'paper') ||
+        (player === 'spock' && computer === 'scissors')) 
     {
         return 'player';
     }
