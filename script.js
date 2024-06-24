@@ -10,6 +10,16 @@ let maxRounds = 5;
 function startGame() {
     const username = document.getElementById('username').value;
     document.getElementById('instructions').innerHTML = `<strong>Welcome, ${username}!</strong><br>Please choose your move.`;
+    
+    // Reset scores and rounds played
+    playerScore = 0;
+    computerScore = 0;
+    roundsPlayed = 0;
+    
+    // Clear the scoreboard
+    document.getElementById('scoreboard').innerHTML = '';
+    
+    // Show choices and hide play again button initially
     document.getElementById('choices').style.display = 'block';
     document.getElementById('scoreboard').style.display = 'block';
     document.getElementById('playAgainBtn').style.display = 'none';
@@ -26,8 +36,7 @@ document.querySelectorAll('.choice').forEach(button => {
 function playRound() {
     let result = determineWinner(playerSelection, computerSelection);
     updateScores(result);
-    // Display the computer's choice and the result of the round
-    document.getElementById('computer-choice').textContent = `Computer chose: ${computerSelection}`;
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerSelection}`; // Display computer's choice
     document.getElementById('result').innerHTML = `Result: ${result === 'draw'? 'It\'s a draw!' : result === 'player'? 'You win this round!' : 'You lose this round!'}`;
     checkGameOver();
 }
@@ -69,6 +78,15 @@ function checkGameOver() {
     }
 }
 
-document.getElementById('playAgainBtn').addEventListener('click', () => {
-    location.reload();
+document.getElementById('playAgainBtn').addEventListener('click', function() {
+    // Reset scores, rounds played, and clear the last result message
+    playerScore = 0;
+    computerScore = 0;
+    roundsPlayed = 0;
+    document.getElementById('result').innerHTML = ''; // Clear the last result message
+    
+    // Show choices and hide play again button
+    document.getElementById('choices').style.display = 'block';
+    document.getElementById('scoreboard').style.display = 'block';
+    document.getElementById('playAgainBtn').style.display = 'none';
 });
