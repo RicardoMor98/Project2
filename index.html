@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPSLS Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<!--basic structure of the display game -->
-
 <body>
-    <h1>Rock, Paper, Scissors, Lizard, Spock Game</h1>
-    <p>Select your move:</p>
-    <div id="options"></div>
-    <button id="submit">submit</button>
-    <p>Computer's Move: <span id="computer-move"></span></p>
-    <p>Player Score: <span id="player-score">0</span></p>
-    <p>Computer Score: <span id="computer-score">0</span></p>
-
-    <!--here i will add the link to the script.js doc-->
-
+    <div class="container">
+        <h1>Welcome to RPSLS Game!</h1>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="startGame()">Start Game</button>
+        <div id="instructions"></div>
+        <div id="choices">
+            <button class="choice" value="rock">Rock</button>
+            <button class="choice" value="paper">Paper</button>
+            <button class="choice" value="scissors">Scissors</button>
+            <button class="choice" value="lizard">Lizard</button>
+            <button class="choice" value="spock">Spock</button>
+        </div>
+        <div id="scoreboard">
+            <div id="player-score">Player Score: 0</div>
+            <div id="computer-score">Computer Score: 0</div>
+        </div>
+        <div id="result"></div>
+        <button id="playAgainBtn" style="display:none;">Play Again?</button>
+    </div>
     <script src="script.js"></script>
-
 </body>
 </html>

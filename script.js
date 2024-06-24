@@ -1,60 +1,66 @@
-const moves = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 let playerScore = 0;
 let computerScore = 0;
+let playerChoices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+let computerChoices = [...playerChoices];
+let playerSelection;
+let computerSelection;
+let roundsPlayed = 0;
+let maxRounds = 5;
 
-function generateComputerMove() {
-    return moves[Math.floor(Math.random() * moves.length)];
+function startGame() {
+    const username = document.getElementById('username').value;
+    document.getElementById('instructions').innerHTML = `<strong>Welcome, ${username}!</strong><br>Please choose your move.`;
+    document.getElementById('choices').style.display = 'block';
+    document.getElementById('scoreboard').style.display = 'block';
+    document.getElementById('playAgainBtn').style.display = 'none';
 }
 
-function determineWinner(playerMove, computerMove) {
-    if (playerMove === computerMove) return "tie";
-    if (
-        (playerMove === 'rock' && computerMove === 'scissors') ||
-        (playerMove === 'paper' && computerMove === 'rock') ||
-        (playerMove === 'scissors' && computerMove === 'paper') ||
-        (playerMove === 'lizard' && computerMove === 'spock') ||
-        (playerMove === 'spock' && computerMove === 'scissors')
-    ) return "win";
-    if (
-        (playerMove === 'rock' && computerMove === 'lizard') ||
-        (playerMove === 'paper' && computerMove === 'lizard') ||
-        (playerMove === 'scissors' && computerMove === 'spock') ||
-        (playerMove === 'lizard' && computerMove === 'paper') ||
-        (playerMove === 'spock' && computerMove === 'rock')
-    ) return "lose";
-    return "invalid";
-}
-
-// Implement game rules here
-
-document.addEventListener('DOMContentLoaded', () => {
-    const optionsDiv = document.getElementById('options');
-    moves.forEach(move => {
-        const option = document.createElement('div');
-        option.innerHTML = `<input type="radio" id="${move}" name="choice" value="${move}">
-                            <label for="${move}">${move}</label>`;
-        optionsDiv.appendChild(option);
-    });
-
-    document.getElementById('submit').addEventListener('click', () => {
-        const playerMove = document.querySelector('input[name="choice"]:checked').value;
-        const computerMove = generateComputerMove();
-        document.getElementById('computer-move').innerText = computerMove;
-
-        const result = determineWinner(playerMove, computerMove);
-        switch (result) {
-            case "win":
-                playerScore++;
-                break;
-            case "lose":
-                computerScore++;
-                break;
-            default:
-                break;
-        }
-        document.getElementById('player-score').innerText = playerScore;
-        document.getElementById('computer-score').innerText = computerScore;
+document.querySelectorAll('.choice').forEach(button => {
+    button.addEventListener('click', () => {
+        playerSelection = button.value;
+        computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        playRound();
     });
 });
 
-// Implement game logic here
+function playRound() {
+    let result = determineWinner(playerSelection, computerSelection);
+    updateScores(result);
+    checkGameOver();
+}
+
+function determineWinner(player, computer) {
+    if (player === computer) return 'draw';
+    if ((player === 'rock' && computer === 'scissors') || 
+        (player === 'paper' && computer === 'rock') || 
+        (player === 'scissors' && computer === 'paper') || 
+        (player === 'lizard' && computer === 'spock') || 
+        (player === 'spock' && computer === 'rock')) 
+    {
+        return 'player';
+    }
+    return 'computer';
+}
+
+function updateScores(winner) {
+    if (winner === 'player') {
+        playerScore++;
+    } else if (winner === 'computer') {
+        computerScore++;
+    }
+    document.getElementById('player-score').textContent = `Player Score: ${playerScore}`;
+    document.getElementById('computer-score').textContent = `Computer Score: ${computerScore}`;
+}
+
+function checkGameOver() {
+    roundsPlayed++;
+    if (roundsPlayed >= maxRounds) {
+        document.getElementById('choices').style.display = 'none';
+        document.getElementById('result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}`;
+        document.getElementById('playAgainBtn').style.display = 'block';
+    }
+}
+
+document.getElementById('playAgainBtn').addEventListener('click', () => {
+    location.reload();
+});

@@ -1,13 +1,33 @@
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: "Poppins", sans-serif;
 }
 
-#options div {
-    margin-bottom: 10px;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
 }
 
-button{
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.choice {
+    margin: 10px;
     padding: 10px 20px;
-    cursor: pointer;
+    font-size: 18px;
+}
+
+#scoreboard {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#player-score, #computer-score {
+    margin: 10px;
 }
