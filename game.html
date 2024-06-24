@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPSLS Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to RPSLS Game!</h1>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="startGame()">Start Game</button>
+        <div id="instructions"></div>
+        <div id="choices">
+            <button class="choice" value="rock">Rock</button>
+            <button class="choice" value="paper">Paper</button>
+            <button class="choice" value="scissors">Scissors</button>
+            <button class="choice" value="lizard">Lizard</button>
+            <button class="choice" value="spock">Spock</button>
+        </div>
+        <div id="scoreboard">
+            <div id="player-score">Player Score: 0</div>
+            <div id="computer-score">Computer Score: 0</div>
+        </div>
+        <div id="result"></div>
+        <button id="playAgainBtn" style="display:none;">Play Again</button>
+        <a href="index.html"><button id="playAgainBtn">Back to Main Page</button></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -26,6 +26,9 @@ document.querySelectorAll('.choice').forEach(button => {
 function playRound() {
     let result = determineWinner(playerSelection, computerSelection);
     updateScores(result);
+    // Display the computer's choice and the result of the round
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerSelection}`;
+    document.getElementById('result').innerHTML = `Result: ${result === 'draw'? 'It\'s a draw!' : result === 'player'? 'You win this round!' : 'You lose this round!'}`;
     checkGameOver();
 }
 
@@ -61,7 +64,7 @@ function checkGameOver() {
     roundsPlayed++;
     if (roundsPlayed >= maxRounds) {
         document.getElementById('choices').style.display = 'none';
-        document.getElementById('result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}`;
+        document.getElementById('result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br><br>Final Result: ${playerScore > computerScore? 'You won the game!' : playerScore < computerScore? 'You lost the game.' : 'The game was a draw.'}`;
         document.getElementById('playAgainBtn').style.display = 'block';
     }
 }
