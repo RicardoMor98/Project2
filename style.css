@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#options div {
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+}
