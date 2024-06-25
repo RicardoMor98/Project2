@@ -196,6 +196,11 @@ body {
         font-size: 90%;
     }
 
+    .mainpage img,.container img {
+        width: 200px; 
+        height: 200px; 
+    }
+
     #past-scores-table {
         font-size: 0.9rem;
         max-width: 95%;
@@ -218,8 +223,8 @@ body {
      }
  
     .mainpage img,.container img {
-         width: 300px; 
-         height: 300px; 
+         width: 200px; 
+         height: 200px; 
      }
  
     .btn,.container button {
