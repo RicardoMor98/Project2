@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif; 
     background-color: blanchedalmond;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh; 
@@ -112,6 +113,13 @@ body {
     font-size: 1.2rem;
     line-height: 1.5rem;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.footercontainer {
+    color: #313966;
+    font-size: 1.2rem;
+    margin-top: 30px;
     text-align: center;
 }
 
