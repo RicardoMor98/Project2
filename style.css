@@ -126,6 +126,14 @@ body {
     text-align: center;
 }
 
+.footercontainer a {
+    text-decoration: none;
+    color: #313966;
+}
+.footercontainer a:hover{
+    color: rgb(17, 9, 46);
+}
+
 @media (max-width: 768px) {
     .mainpage,.container {
           font-size: 90%;

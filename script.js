@@ -8,12 +8,28 @@ let roundsPlayed = 0;
 let maxRounds = 5;
 
 function startGame() {
-    const username = document.getElementById('username').value;
+    const usernameInput = document.getElementById('username');
+    if (usernameInput.value.trim() === '') {
+        alert('Please enter your name.');
+        return;
+    }
+
+    const username = usernameInput.value;
+    localStorage.setItem('playerName', username);
     document.getElementById('instructions').innerHTML = `<strong>Welcome, ${username}!</strong><br>Please choose your move.`;
     document.getElementById('choices').style.display = 'block';
     document.getElementById('scoreboard').style.display = 'block';
     document.getElementById('playAgainBtn').style.display = 'none';
+
+    showPastScores();
 }
+window.onload = function() {
+    const storedUsername = localStorage.getItem('playerName');
+    if (storedUsername) {
+        document.getElementById('username').value = storedUsername;
+    }
+    showPastScores(); 
+};
 
 document.querySelectorAll('.choice').forEach(button => {
     button.addEventListener('click', () => {
@@ -66,9 +82,12 @@ function displayRoundResult(result) {
 function checkGameOver() {
     roundsPlayed++;
     if (roundsPlayed >= maxRounds) {
+        const scoresObj = { playerName: playerScore, computerScore };
+        localStorage.setItem('scores', JSON.stringify([...Array.from(localStorage.scores), scoresObj].sort((a, b) => b.playerScore - a.playerScore)));
         document.getElementById('choices').style.display = 'none';
         document.getElementById('game-result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br><br>Final Result: ${playerScore > computerScore? 'You won the game!' : playerScore < computerScore? 'You lost the game.' : 'The game was a draw.'}`;
         document.getElementById('playAgainBtn').style.display = 'block';
+        localStorage.setItem(`score_${localStorage.playerName}`, JSON.stringify({playerScore, computerScore}));
     }
 }
 
@@ -82,3 +101,26 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
 document.getElementById('backToMainPageBtn').addEventListener('click', () => {
     window.location.href = "index.html";
 });
+
+function showPastScores() {
+    const scoresStr = localStorage.getItem('scores');
+    if (!scoresStr) return;
+    const scoresArr = JSON.parse(scoresStr);
+
+    // Sort the scores array based on playerScore in descending order
+    scoresArr.sort((a, b) => b.playerScore - a.playerScore);
+
+    const scoresTableBody = document.querySelector('#past-scores-table tbody');
+    scoresTableBody.innerHTML = ''; // Clear existing content
+
+    // Iterate through the sorted scores array and append rows to the table body
+    scoresArr.forEach(scoreObj => {
+        scoresTableBody.innerHTML += `
+            <tr>
+                <td>${scoreObj.playerName}</td>
+                <td>${scoreObj.playerScore}</td>
+                <td>${scoreObj.computerScore}</td>
+            </tr>
+        `;
+    });
+}
