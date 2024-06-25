@@ -10,16 +10,6 @@ let maxRounds = 5;
 function startGame() {
     const username = document.getElementById('username').value;
     document.getElementById('instructions').innerHTML = `<strong>Welcome, ${username}!</strong><br>Please choose your move.`;
-    
-    // Reset scores and rounds played
-    playerScore = 0;
-    computerScore = 0;
-    roundsPlayed = 0;
-    
-    // Clear the scoreboard
-    document.getElementById('scoreboard').innerHTML = '';
-    
-    // Show choices and hide play again button initially
     document.getElementById('choices').style.display = 'block';
     document.getElementById('scoreboard').style.display = 'block';
     document.getElementById('playAgainBtn').style.display = 'none';
@@ -36,8 +26,7 @@ document.querySelectorAll('.choice').forEach(button => {
 function playRound() {
     let result = determineWinner(playerSelection, computerSelection);
     updateScores(result);
-    document.getElementById('computer-choice').textContent = `Computer chose: ${computerSelection}`; // Display computer's choice
-    document.getElementById('result').innerHTML = `Result: ${result === 'draw'? 'It\'s a draw!' : result === 'player'? 'You win this round!' : 'You lose this round!'}`;
+    displayRoundResult(result);
     checkGameOver();
 }
 
@@ -69,24 +58,27 @@ function updateScores(winner) {
     document.getElementById('computer-score').textContent = `Computer Score: ${computerScore}`;
 }
 
+function displayRoundResult(result) {
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerSelection}`;
+    document.getElementById('result-text').innerHTML = `Result: ${result === 'draw'? 'It\'s a draw!' : result === 'player'? 'You win this round!' : 'You lose this round!'}`;
+}
+
 function checkGameOver() {
     roundsPlayed++;
     if (roundsPlayed >= maxRounds) {
         document.getElementById('choices').style.display = 'none';
-        document.getElementById('result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br><br>Final Result: ${playerScore > computerScore? 'You won the game!' : playerScore < computerScore? 'You lost the game.' : 'The game was a draw.'}`;
+        document.getElementById('game-result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br><br>Final Result: ${playerScore > computerScore? 'You won the game!' : playerScore < computerScore? 'You lost the game.' : 'The game was a draw.'}`;
         document.getElementById('playAgainBtn').style.display = 'block';
     }
 }
 
-document.getElementById('playAgainBtn').addEventListener('click', function() {
-    // Reset scores, rounds played, and clear the last result message
+document.getElementById('playAgainBtn').addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
     roundsPlayed = 0;
-    document.getElementById('result').innerHTML = ''; // Clear the last result message
-    
-    // Show choices and hide play again button
-    document.getElementById('choices').style.display = 'block';
-    document.getElementById('scoreboard').style.display = 'block';
-    document.getElementById('playAgainBtn').style.display = 'none';
+    location.reload();
+});
+
+document.getElementById('backToMainPageBtn').addEventListener('click', () => {
+    window.location.href = "index.html";
 });
