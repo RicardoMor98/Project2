@@ -75,6 +75,14 @@ body {
 }
 
 /*game html specif style*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .container h1 {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -117,6 +125,25 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
+.past-scores-container h3 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.past-scores-container tbody {
+    text-align: center;
+    justify-content: center;
+    line-height: 1.5rem;
+}
+
+
+#past-scores-table {
+    max-width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
 
 /*footer style*/
 .footercontainer {
@@ -138,4 +165,10 @@ body {
     .mainpage,.container {
           font-size: 90%;
      }
+
+     #past-scores-table {
+        font-size: 0.9rem; 
+        max-width: 95%; 
+    }
+
  }

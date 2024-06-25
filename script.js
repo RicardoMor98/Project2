@@ -82,12 +82,13 @@ function displayRoundResult(result) {
 function checkGameOver() {
     roundsPlayed++;
     if (roundsPlayed >= maxRounds) {
-        const scoresObj = { playerName: playerScore, computerScore };
-        localStorage.setItem('scores', JSON.stringify([...Array.from(localStorage.scores), scoresObj].sort((a, b) => b.playerScore - a.playerScore)));
+        const scores = JSON.parse(localStorage.getItem('scores') || '[]');
+        scores.push({ playerName: localStorage.getItem('playerName'), playerScore, computerScore });
+        scores.sort((a, b) => b.playerScore - a.playerScore);
+        localStorage.setItem('scores', JSON.stringify(scores.slice(0, 5)));
         document.getElementById('choices').style.display = 'none';
         document.getElementById('game-result').innerHTML = `<strong>Game Over!</strong><br>Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br><br>Final Result: ${playerScore > computerScore? 'You won the game!' : playerScore < computerScore? 'You lost the game.' : 'The game was a draw.'}`;
         document.getElementById('playAgainBtn').style.display = 'block';
-        localStorage.setItem(`score_${localStorage.playerName}`, JSON.stringify({playerScore, computerScore}));
     }
 }
 
@@ -104,16 +105,20 @@ document.getElementById('backToMainPageBtn').addEventListener('click', () => {
 
 function showPastScores() {
     const scoresStr = localStorage.getItem('scores');
-    if (!scoresStr) return;
+    if (!scoresStr) {
+        console.error("No scores found in local storage.");
+        return;
+    }
     const scoresArr = JSON.parse(scoresStr);
 
-    // Sort the scores array based on playerScore in descending order
+    console.log("Retrieved scores:", scoresArr); 
+
+   
     scoresArr.sort((a, b) => b.playerScore - a.playerScore);
 
     const scoresTableBody = document.querySelector('#past-scores-table tbody');
-    scoresTableBody.innerHTML = ''; // Clear existing content
+    scoresTableBody.innerHTML = ''; 
 
-    // Iterate through the sorted scores array and append rows to the table body
     scoresArr.forEach(scoreObj => {
         scoresTableBody.innerHTML += `
             <tr>
@@ -123,4 +128,6 @@ function showPastScores() {
             </tr>
         `;
     });
+
+    console.log("Displayed scores:", scoresArr); 
 }
