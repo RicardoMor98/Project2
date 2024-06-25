@@ -7,6 +7,12 @@ let computerSelection;
 let roundsPlayed = 0;
 let maxRounds = 5;
 
+const choicesContainer = document.getElementById('choices');
+choicesContainer.style.display = 'none';
+document.getElementById('player-score').textContent = '';
+document.getElementById('computer-score').textContent = '';
+
+
 function startGame() {
     const usernameInput = document.getElementById('username');
     if (usernameInput.value.trim() === '') {
@@ -17,12 +23,20 @@ function startGame() {
     const username = usernameInput.value;
     localStorage.setItem('playerName', username);
     document.getElementById('instructions').innerHTML = `<strong>Welcome, ${username}!</strong><br>Please choose your move.`;
-    document.getElementById('choices').style.display = 'block';
+    
+   
+    choicesContainer.style.display = 'block';
     document.getElementById('scoreboard').style.display = 'block';
     document.getElementById('playAgainBtn').style.display = 'none';
+    document.getElementById('player-score').textContent = 'Player Score: 0';
+    document.getElementById('computer-score').textContent ='Computer Score: 0';
+    document.getElementById('username').style.display = 'none';
+    document.getElementById('playgame').style.display = 'none';
+   
 
     showPastScores();
 }
+
 window.onload = function() {
     const storedUsername = localStorage.getItem('playerName');
     if (storedUsername) {
@@ -31,6 +45,7 @@ window.onload = function() {
     showPastScores(); 
 };
 
+
 document.querySelectorAll('.choice').forEach(button => {
     button.addEventListener('click', () => {
         playerSelection = button.value;
@@ -38,6 +53,7 @@ document.querySelectorAll('.choice').forEach(button => {
         playRound();
     });
 });
+
 
 function playRound() {
     let result = determineWinner(playerSelection, computerSelection);

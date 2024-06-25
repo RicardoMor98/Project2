@@ -12,7 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    margin: 2px; 
+    margin: 20px;
+    padding: 20px; 
 }
 
 /* Apply these styles to both mainpage and container classes */
@@ -166,6 +167,22 @@ body {
     color: rgb(17, 9, 46);
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mainpage,.container {
+         font-size: 95%;
+     }
+     
+    
+    .mainpage img,.container img {
+         width: 400px;
+         height: 400px;
+     }
+     
+     
+    .btn,.container button {
+         padding: 10px 24px;
+     }
+ }
 @media (max-width: 768px) {
     .mainpage,.container {
           font-size: 90%;
@@ -175,5 +192,20 @@ body {
         font-size: 0.9rem; 
         max-width: 95%; 
     }
+    .mainpage,.container {
+        font-size: 90%;
+    }
 
- }
+    #past-scores-table {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+
+   .choice,.container.choice {
+        font-size: 16px;
+    }
+
+   .btn,.container button {
+        padding: 10px 24px;
+    }
+}
