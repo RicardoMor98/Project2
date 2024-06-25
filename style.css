@@ -164,7 +164,7 @@ body {
     color: #313966;
 }
 .footercontainer a:hover{
-    color: rgb(17, 9, 46);
+    color: rgb(182, 168, 230);
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
