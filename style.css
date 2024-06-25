@@ -92,7 +92,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-.container button {
+.container button, #backToMainPageBtn {
     background-color: #313966;
     border-radius: 12px;
     color: rgb(252, 249, 249);
@@ -103,6 +103,11 @@ body {
     font-size: 20px;
     transition-duration: 0.4s;
     margin-bottom: 30px;
+}
+
+#backToMainPageBtn:hover{
+    background-color: black;
+    color: white;
 }
 
 #instructions {
