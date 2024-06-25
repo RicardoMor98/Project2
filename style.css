@@ -184,10 +184,6 @@ body {
      }
  }
 @media (max-width: 768px) {
-    body {
-        margin: 20px;
-        padding: 20px;
-    }
     .mainpage,.container {
           font-size: 90%;
      }
