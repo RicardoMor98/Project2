@@ -134,4 +134,76 @@
   ![Score Table](assets/img/scoretable.png)
   </details> 
 
- 
+ ## Future Features
+
+  - Add the possibility to play player vs player.
+  - Have a world wide record connected on the web.
+  - Different grades of lvl from computer depending on the lvl to play with more strategy on the choices.
+
+  ## Responsiveness
+
+ - I leveraged the developer tools to test the responsiveness of the project across different resolutions.
+
+ ## Browsers
+
+  - The web application is officially tested and supported on the following browsers and devices: Google Chrome (latest version).
+
+  - Responsiveness Testing conduct manual responsiveness testing on Chrome to ensure a seamless user experience.
+
+## Validator Testing
+
+  ### HTML
+
+      - No errors were returned when passing through the official W3C validator:
+
+  <details><summary>HTML Validator</summary>
+
+  ![Index.html](assets/img/indexhtml.png)
+  ![Game.html](assets/img/game.html.png)
+  </details> 
+
+
+  ### CSS
+
+    - No errors were found when passing through the official Jigsaw validator:
+
+  <details><summary>CSS Validator</summary>
+
+  ![Style.css](assets/img/style.css.png)
+  </details> 
+
+
+  ## Deployment
+
+
+    - The site was deployed to GitHub pages. The steps to deploy are as follows: 
+      
+      - In the GitHub repository, navigate to the Settings tab 
+      
+      - From the source section drop-down menu, select the Main Branch
+     
+      - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+## Credits
+
+  #### Media   
+
+  - Images are sourced from:   https://www.pinterest.de/pin/6403624443776744/ - "Megan Clemmons"
+
+  #### Code
+
+  - Overall inspiration was taken from Code Institute and mention in Big Bang Theory.
+
+  #### Acknowledgements
+
+  - Thanks to the open-source community for creating resources and tools that made this project possible.
+
+  - Thanks to Sérgio Ferreira for helping with issues and guide through the project.
+
+  - Thanks to Elena Hanna for support during the project.
+  
+  - Thanks to Dani Dudley for support during the project.
+
+  - Thanks to Erik_4P_Lead for support during the project.
+
+  - Special thanks to Mentor-Antonio Rodriguez  for his guidance and support throughout the project.
