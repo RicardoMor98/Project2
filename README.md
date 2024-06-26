@@ -33,20 +33,20 @@
 
   ## Rules 
 
-  - The rules of Rock-paper-scissors-lizard-Spock are:
+  ### The rules of Rock-paper-scissors-lizard-Spock are:
 
-             Scissors cut paper
-             Paper covers rock
-             Rock crushes lizard
-             Lizard poisons Spock
-             Spock smashes (or melts) scissors
-             Scissors decapitate lizard
-             Lizard eats paper
-             Paper disproves Spock
-             Spock vaporizes rock
-             Rock breaks scissors
+  - Scissors cut paper
+  - Paper covers rock
+  - Rock crushes lizard
+  - Lizard poisons Spock
+  - Spock smashes (or melts) scissors
+  - Scissors decapitate lizard
+  - Lizard eats paper
+  - Paper disproves Spock
+  - Spock vaporizes rock
+  - Rock breaks scissors
 
-  - There are ten possible pairings of the five gestures; each gesture beats two of the other gestures and is beaten by the remaining two.
+  #### There are ten possible pairings of the five gestures; each gesture beats two of the other gestures and is beaten by the remaining two.
 
   <details><summary>Rules Image</summary>
 
@@ -56,7 +56,7 @@
 
   ## Footer 
 
-    -  The footer leads the user to the project's repository when the name is being clicked on from both Main Page and Game Page.
+  -  The footer leads the user to the project's repository when the name is being clicked on from both Main Page and Game Page.
 
   <details><summary>Foooter Image</summary>
 
@@ -66,7 +66,7 @@
 
   ## Username Field  
 
-    - It has a required username field in the game page that user has to fill in order to start the game.
+  - It has a required username field in the game page that user has to fill in order to start the game.
 
   <details><summary>Username Field</summary>
 
@@ -76,7 +76,7 @@
 
   ## Start Game Button
 
-    - Once the username is filled the user can click the button to start the game.
+  - Once the username is filled the user can click the button to start the game.
 
   <details><summary>Start Game Button</summary>
 
@@ -86,7 +86,7 @@
 
   ## Game Display 
 
-    - Once Started Game display a good Welcoming to the user and  5 button options with different values for user to choose.
+  - Once Started Game display a good Welcoming to the user and  5 button options with different values for user to choose.
 
   <details><summary>Game Display</summary>
 
@@ -97,7 +97,7 @@
 
   ## Computer choice and Round result
 
-    - Once player chooses one option the computer also takes a random choice that will lead to a result of: win,lose or draw.
+  - Once player chooses one option the computer also takes a random choice that will lead to a result of: win,lose or draw.
 
   <details><summary>Computer choice and Round result</summary>
 
@@ -107,7 +107,7 @@
 
   ## Scoring System
 
-    - The game is played in best of 5 rounds where the draw is not counted as a point for user or computer. After the 5 rounds finished there is a final result for the winner of the Game.
+  - The game is played in best of 5 rounds where the draw is not counted as a point for user or computer. After the 5 rounds finished there is a final result for the winner of the Game.
 
    <details><summary>Scoring System</summary>
 
@@ -117,7 +117,7 @@
 
   ## End Game
 
-    -   when game ends under the final score user has 2 button options to "Play Again" and the game restarts or "Back to Main Page".
+  - when game ends under the final score user has 2 button options to "Play Again" and the game restarts or "Back to Main Page".
 
   <details><summary>Play Again or Back to Main Page button</summary>
 
@@ -127,7 +127,7 @@
 
   ## Score Table
 
-    - Under the "Back to Main Page" button there is a "Best Score" table for the best 5 results that is updating according to the next best.
+  - Under the "Back to Main Page" button there is a "Best Score" table for the best 5 results that is updating according to the next best.
 
   <details><summary>Score Table</summary>
 
@@ -154,7 +154,7 @@
 
   ### HTML
 
-      - No errors were returned when passing through the official W3C validator:
+  - No errors were returned when passing through the official W3C validator:
 
   <details><summary>HTML Validator</summary>
 
@@ -165,7 +165,7 @@
 
   ### CSS
 
-    - No errors were found when passing through the official Jigsaw validator:
+  - No errors were found when passing through the official Jigsaw validator:
 
   <details><summary>CSS Validator</summary>
 
@@ -176,13 +176,13 @@
   ## Deployment
 
 
-    - The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - The site was deployed to GitHub pages. The steps to deploy are as follows: 
       
-      - In the GitHub repository, navigate to the Settings tab 
+  - In the GitHub repository, navigate to the Settings tab 
       
-      - From the source section drop-down menu, select the Main Branch
+  - From the source section drop-down menu, select the Main Branch
      
-      - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 ## Credits
 
