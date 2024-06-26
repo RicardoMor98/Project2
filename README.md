@@ -8,6 +8,35 @@
 
 ## ## [Live site](https://ricardomor98.github.io/Project2/)
 
+## Site Owner Goals
+
+- To provide the user with an easy to navigate game that is both fun and entertaining.
+- To present the user with a website that is visually appealing and fully responsive.
+- To entice the user to return to the game to improve their score.
+
+## User Stories
+
+  ### First Time User
+
+  - As a first time user I want to understand the main purpose of the game.
+
+  ### Returning user
+
+  - As a returning user I want to be able to save my score to the leaderboard.
+
+  ### Frequent user
+
+  - As a frequent user I want to be able to beat my previous score on the leaderboard.
+
+## Wireframes
+
+  - Wireframes were produced using Word.
+
+  <details><summary>Desktop Wireframe</summary>
+
+![Desktop Wireframe](assets/img/wireframes.png)</details>
+
+
 # Features
 
   ## Header 
@@ -170,6 +199,15 @@
   <details><summary>CSS Validator</summary>
 
   ![Style.css](assets/img/style.css.png)
+  </details> 
+
+  ### Javascript
+
+  - No errors were returned when passing through the the JSHint Validator.
+
+  <details><summary>JSHint Validator</summary>
+
+  ![JSHint Validator](assets/img/jstest.png)
   </details> 
 
 
