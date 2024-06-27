@@ -219,7 +219,7 @@ body {
    
     
     .mainpage,.container {
-         font-size: 85%; 
+         font-size: 75%; 
      }
  
     .mainpage img,.container img {
@@ -228,11 +228,13 @@ body {
      }
  
     .btn,.container button {
-         padding: 8px 20px; 
+         padding: 8px 20px;
      }
  
     .choice,.container.choice {
          font-size: 14px; 
+         display: block; 
+         margin-bottom: 10px;
      }
  
      #past-scores-table {

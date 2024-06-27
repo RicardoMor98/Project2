@@ -211,6 +211,25 @@
   </details> 
 
 
+  ## Lighthouse accessibility
+
+  ### Mobile Lighthouse Score
+
+  <details><summary>Lighthouse accessibility</summary>
+
+  ![Lighthouse accessibility](assets/img/testlighthousephone.png)
+  ![Lighthouse accessibility](assets/img/testlighthousephone1.png)
+  </details> 
+
+  ### Desktop Lighthouse Score
+
+  <details><summary>Lighthouse accessibility</summary>
+
+  ![Lighthouse accessibility](assets/img/testlighthousedesktop.png)
+  ![Lighthouse accessibility](assets/img/trestlighthousedesktop1.png)
+  </details> 
+
+
   ## Deployment
 
 
